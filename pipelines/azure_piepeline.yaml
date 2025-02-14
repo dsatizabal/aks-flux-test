@@ -29,6 +29,7 @@ stages:
             displayName: "Set Deploy Key Path"
 
           - script: |
+              cp $(fluxDeployKey.secureFilePath) .
               tree
             name: ShowDirTree
             displayName: "Show dir tree"
