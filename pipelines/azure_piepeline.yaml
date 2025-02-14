@@ -7,7 +7,7 @@ pool:
 variables:
   - group: GroupsSyncVars
   - name: TF_VAR_flux_deploy_key_path
-    value: './key'
+    value: $(DEPLOY_KEY)
 
 stages:
   - stage: Download_secure_file
