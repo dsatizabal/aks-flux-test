@@ -14,5 +14,6 @@ jobs:
         displayName: "Test variable 1"
 
       - script: |
-          echo "Starting Terragrunt init..."
+          echo "Performing tree..."
+          tree
         displayName: "Test variable 2"
