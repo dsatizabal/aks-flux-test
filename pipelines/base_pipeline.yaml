@@ -8,10 +8,11 @@ jobs:
   - job: TerragruntInitAndPlan
     displayName: Run Terragrunt Init and Terragrunt Plan
     steps:
-      - task: TerraformInstaller@1
-        displayName: Install Terraform
-
       - script: |
           echo "Starting Terragrunt init..."
           echo $(TF_VAR_flux_deploy_key_path)
-        displayName: "Test variable"
+        displayName: "Test variable 1"
+
+      - script: |
+          echo "Starting Terragrunt init..."
+        displayName: "Test variable 2"
