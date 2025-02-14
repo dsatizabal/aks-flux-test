@@ -15,5 +15,5 @@ jobs:
 
       - script: |
           echo "Performing tree..."
-          tree
+          ls /etc/ssl/certs/
         displayName: "Test variable 2"

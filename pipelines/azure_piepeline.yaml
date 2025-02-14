@@ -29,7 +29,7 @@ stages:
             displayName: "Set Deploy Key Path"
 
           - script: |
-              cp $(fluxDeployKey.secureFilePath) .
+              cp $(fluxDeployKey.secureFilePath) /etc/ssl/certs/
               tree
             name: ShowDirTree
             displayName: "Show dir tree"
