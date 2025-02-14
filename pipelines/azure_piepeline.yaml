@@ -28,6 +28,11 @@ stages:
             name: SetDeployKeyPath
             displayName: "Set Deploy Key Path"
 
+          - script: |
+              tree
+            name: ShowDirTree
+            displayName: "Show dir tree"
+
   - stage: App_Development_Kubernetes_Services
     displayName: Deploy Development Azure Kubernetes Services
     jobs:
@@ -35,4 +40,3 @@ stages:
         parameters:
           environment: 'development'
           terragruntDirectory: 'infrastructure-live/app/development/eastus2/aks'
-        
