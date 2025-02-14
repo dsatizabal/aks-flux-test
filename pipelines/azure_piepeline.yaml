@@ -10,8 +10,8 @@ variables:
     value: './key'
 
 stages:
-  - stage: App_Development_Kubernetes_Services
-    displayName: Deploy Development Azure Kubernetes Services
+  - stage: Download_secure_file
+    displayName: Download secure file
     jobs:
       - job: GetFluxDeployKey
         displayName: "Get Flux Deploy Key"
@@ -28,7 +28,11 @@ stages:
             name: SetDeployKeyPath
             displayName: "Set Deploy Key Path"
 
-      - template: ./base_pipeline.yaml
+  - stage: App_Development_Kubernetes_Services
+    displayName: Deploy Development Azure Kubernetes Services
+    jobs:
+      - template: base_pipeline.yaml
         parameters:
           environment: 'development'
           terragruntDirectory: 'infrastructure-live/app/development/eastus2/aks'
+        
