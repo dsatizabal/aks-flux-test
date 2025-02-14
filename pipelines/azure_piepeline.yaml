@@ -5,9 +5,9 @@ pool:
   vmImage: "ubuntu-latest"
 
 variables:
-  - group: development
-  - group: management
-    TF_VAR_flux_deploy_key_path: './key'
+  - group: GroupsSyncVars
+  - name: TF_VAR_flux_deploy_key_path
+    value: './key'
 
 stages:
   - stage: App_Development_Kubernetes_Services
@@ -28,7 +28,7 @@ stages:
             name: SetDeployKeyPath
             displayName: "Set Deploy Key Path"
 
-      - template: ./base-pipeline.yml
+      - template: ./base_pipeline.yaml
         parameters:
           environment: 'development'
           terragruntDirectory: 'infrastructure-live/app/development/eastus2/aks'
